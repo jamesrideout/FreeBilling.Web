@@ -1,0 +1,26 @@
+GET http://localhost:5000/api/customers
+
+###
+
+GET http://localhost:5000/api/customers?withAddresses=true
+
+###
+
+GET http://localhost:5000/api/customers/1
+
+###
+
+GET http://localhost:5000/api/timebills/1
+
+###
+
+POST http://localhost:5000/api/timebills
+Content-Type: applicaton/json
+
+{
+    "hours": 2.5,
+    "billingRate": 125.00,
+    "date": "2023-05-05",
+    "clientRequested": true,
+    "workPerformed": "I did a thing..."
+}
