@@ -40,7 +40,7 @@ app.MapGet("/api/timebills/{id:int}", async (IBillingRepository repository, int 
     if (bill is null) Results.NotFound();
 
     return Results.Ok(bill);
-;});
+});
 
 app.MapPost("/api/timebills", async (IBillingRepository repository, TimeBill model) =>
 {

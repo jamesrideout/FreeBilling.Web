@@ -4,7 +4,7 @@
 
 namespace FreeBilling.Web.Migrations
 {
-    public partial class InitialEntities : Migration
+    public partial class Seeding : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FreeBilling.Web.Migrations
 {
     [DbContext(typeof(BillingContext))]
-    [Migration("20240103155521_InitialEntities")]
+    [Migration("20240108112056_InitialEntities")]
     partial class InitialEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,24 @@ namespace FreeBilling.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Address");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AddressLine1 = "123 Main Street",
+                            City = "Atlanta",
+                            PostalCode = "12345",
+                            StateProvince = "GA"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AddressLine1 = "123 First Avenue",
+                            City = "Atlanta",
+                            PostalCode = "12345",
+                            StateProvince = "GA"
+                        });
                 });
 
             modelBuilder.Entity("FreeBilling.Data.Entities.Customer", b =>
@@ -84,6 +102,24 @@ namespace FreeBilling.Web.Migrations
                     b.HasIndex("AddressId");
 
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AddressId = 1,
+                            CompanyName = "Smith Towing",
+                            Contact = "Jim",
+                            PhoneNumber = "555-1212"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AddressId = 2,
+                            CompanyName = "Paintorama",
+                            Contact = "Phyllis",
+                            PhoneNumber = "555-2121"
+                        });
                 });
 
             modelBuilder.Entity("FreeBilling.Data.Entities.Employee", b =>
@@ -111,6 +147,40 @@ namespace FreeBilling.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BillingRate = 220.0,
+                            Email = "mary@freebilling.com",
+                            ImageUrl = "./img/mary.jpg",
+                            Name = "Mary Jones"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BillingRate = 85.0,
+                            Email = "betty@freebilling.com",
+                            ImageUrl = "./img/betty.jpg",
+                            Name = "Betty Patel"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BillingRate = 115.0,
+                            Email = "nancy@freebilling.com",
+                            ImageUrl = "./img/nancy.jpg",
+                            Name = "Nancy Smith"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BillingRate = 145.0,
+                            Email = "john@freebilling.com",
+                            ImageUrl = "./img/john.jpg",
+                            Name = "John Phillips"
+                        });
                 });
 
             modelBuilder.Entity("FreeBilling.Data.Entities.TimeBill", b =>
@@ -151,7 +221,7 @@ namespace FreeBilling.Web.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("TimeBill");
+                    b.ToTable("TimeBills");
                 });
 
             modelBuilder.Entity("FreeBilling.Data.Entities.Customer", b =>

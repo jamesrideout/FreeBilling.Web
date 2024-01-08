@@ -10,12 +10,12 @@ GET http://localhost:5000/api/customers/1
 
 ###
 
-GET http://localhost:5000/api/timebills/1
+GET http://localhost:5000/api/timebills/13
 
 ###
 
 POST http://localhost:5000/api/timebills
-Content-Type: applicaton/json
+Content-Type: application/json
 
 {
     "hours": 2.5,

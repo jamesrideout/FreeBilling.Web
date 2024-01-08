@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FreeBilling.Web.Migrations
 {
     [DbContext(typeof(BillingContext))]
-    [Migration("20240105165853_InitialEntities")]
-    partial class InitialEntities
+    [Migration("20240108112922_Seeding")]
+    partial class Seeding
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

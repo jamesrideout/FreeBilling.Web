@@ -90,7 +90,7 @@ public class BillingRepository : IBillingRepository
 
     public async Task<TimeBill?> GetTimeBill(int id)
     {
-        var bill = await _context.TimeBills.FindAsync();
+        var bill = await _context.TimeBills.FindAsync(id);
         return bill;
     }
 
